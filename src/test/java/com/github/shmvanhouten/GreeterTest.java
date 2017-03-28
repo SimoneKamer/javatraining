@@ -9,7 +9,7 @@ public class GreeterTest {
 
     public String text = "Appel";
     protected  String text2 = "Peer";
-    String pakketje = "InhetPakket";
+    String pakketje = "InhetPakket"; //package
     private String secret = "geheim";
 
     @Test
