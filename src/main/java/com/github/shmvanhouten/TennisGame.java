@@ -4,11 +4,11 @@ public class TennisGame {
 
     String score(int player1score, int player2score){
         String[] scoreDescription = {"zero","fifteen","thirty","forty"};
-        boolean advantage = Math.abs(player1score-player2score)== 1;
+
         boolean scoresAreEqual = (player1score == player2score);
-        boolean atLeastThreePointsScored = (player1score >= 3);
-        boolean atLeastOneScoreAboveForty = ((player1score >= 4) || (player2score >= 4));
+
         if (scoresAreEqual) {
+            boolean atLeastThreePointsScored = (player1score >= 3);
             if (atLeastThreePointsScored) {
                 return "deuce";
             } else {
@@ -16,7 +16,9 @@ public class TennisGame {
             }
         }
         else {
+            boolean atLeastOneScoreAboveForty = ((player1score >= 4) || (player2score >= 4));
             if (atLeastOneScoreAboveForty){
+                boolean advantage = Math.abs(player1score-player2score)== 1;
                 if (advantage){
                     if ((player1score-player2score)> 0){
                         return "Advantage Player 1";
