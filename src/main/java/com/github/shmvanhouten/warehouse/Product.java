@@ -45,7 +45,11 @@ public class Product {
 //            return this.expirationDate.compareTo(other.getExpirationDate());
 //        }
 
-    public String getProductName() {return productName;}
+    public String getProductName() {
+            return productName;
+    }
 
-    public LocalDate getExpirationDate() {return expirationDate;}
+    public LocalDate getExpirationDate() {
+            return expirationDate;
+    }
 }
