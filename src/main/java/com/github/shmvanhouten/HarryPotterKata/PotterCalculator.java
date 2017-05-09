@@ -28,6 +28,14 @@ public class PotterCalculator{
 
     public double calculatePriceWithCheaperMethod(double totalPrice, List<String> basket) {
         while (!basket.isEmpty()){
+            while (basket.size() > 8){
+                totalPrice += 30;
+                basket.remove("one");
+                basket.remove("two");
+                basket.remove("three");
+                basket.remove("four");
+                basket.remove("five");
+            }
             Set<String> subsetOfBooks = new HashSet<>();
             for (String book : basket) {
                 if (!subsetOfBooks.contains(book) && subsetOfBooks.size()<4){
