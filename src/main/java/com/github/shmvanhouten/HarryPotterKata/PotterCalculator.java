@@ -27,14 +27,10 @@ public class PotterCalculator{
     }
 
     public double calculatePriceWithCheaperMethod(double totalPrice, List<String> basket) {
-        while (!basket.isEmpty()){
+            while (!basket.isEmpty()){
             while (basket.size() > 8){
                 totalPrice += 30;
-                basket.remove("one");
-                basket.remove("two");
-                basket.remove("three");
-                basket.remove("four");
-                basket.remove("five");
+                removeCompleteSubsetOfBooks(basket);
             }
             Set<String> subsetOfBooks = new HashSet<>();
             for (String book : basket) {
@@ -49,6 +45,14 @@ public class PotterCalculator{
             }
         }
         return totalPrice;
+    }
+
+    public void removeCompleteSubsetOfBooks(List<String> basket) {
+        basket.remove("one");
+        basket.remove("two");
+        basket.remove("three");
+        basket.remove("four");
+        basket.remove("five");
     }
 
     public double calculatePriceTheStraightforwardWay(double totalPrice, List<String> basket) {
