@@ -77,14 +77,14 @@ public class PotterTest {
 
         assertEquals(81.20, actual, 0.01);
     }
-//    @Test
-//    public void BuyAComplicatedSetOfFiveAndASetOfThreeBooks() {
-//        PotterCalculator calculator = new PotterCalculator();
-//        String[] shoppingBasket = new String []{
-//                "one", "one", "two", "three","three","four","five", "five"};
-//
-//        double actual = calculator.calculatePrice(shoppingBasket);
-//
-//        assertEquals(51.20, actual, 0.01);
-//    }
+    @Test
+    public void BuyAComplicatedSetOfFiveAndASetOfThreeBooks() {
+        PotterCalculator calculator = new PotterCalculator();
+        String[] shoppingBasket = new String []{
+                "one", "one", "two", "three","three","four","five", "five"};
+
+        double actual = calculator.calculatePrice(shoppingBasket);
+
+        assertEquals(51.20, actual, 0.01);
+    }
 }
