@@ -67,13 +67,24 @@ public class PotterTest {
     }
 
     @Test
-    public void BuyAComplicatedSetOfFiveAndASetOfThreeBooks() {
+    public void BuyAMultipleOfFiveBooksPlusThreeBooks() {
         PotterCalculator calculator = new PotterCalculator();
-        String[] shoppingBasket = new String []{
-                "one", "one", "two", "three","three","four","five", "five"};
+        String[] shoppingBasket = new String []{"one", "two", "three",
+                "one", "two", "three","four","five",
+                "one", "two", "three","four","five"};
 
         double actual = calculator.calculatePrice(shoppingBasket);
 
-        assertEquals(51.20, actual, 0.01);
+        assertEquals(81.20, actual, 0.01);
     }
+//    @Test
+//    public void BuyAComplicatedSetOfFiveAndASetOfThreeBooks() {
+//        PotterCalculator calculator = new PotterCalculator();
+//        String[] shoppingBasket = new String []{
+//                "one", "one", "two", "three","three","four","five", "five"};
+//
+//        double actual = calculator.calculatePrice(shoppingBasket);
+//
+//        assertEquals(51.20, actual, 0.01);
+//    }
 }

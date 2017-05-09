@@ -64,7 +64,4 @@ public class PotterCalculator{
         return discountPercentage.get(subsetOfBooks.size());
     }
 
-//    private double determineCheapestOption (set<String> subsetOfBooks) {
-//
-//    }
 }
