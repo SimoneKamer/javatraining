@@ -77,6 +77,16 @@ public class PotterTest {
 
         assertEquals(81.20, actual, 0.01);
     }
+
+    @Test
+    public void BuyEightSameBooks(){
+        PotterCalculator calculator = new PotterCalculator();
+        String[] shoppingBasket = new String []{
+                "one", "one","one", "one","one", "one","one", "one"};
+        double actual = calculator.calculatePrice(shoppingBasket);
+
+        assertEquals(64, actual, 0.01);
+    }
     @Test
     public void BuyAComplicatedSetOfFiveAndASetOfThreeBooks() {
         PotterCalculator calculator = new PotterCalculator();

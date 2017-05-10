@@ -18,6 +18,8 @@ public class PotterCalculator{
     public double calculatePrice (String[] shoppingBasket) {
         double totalPrice = 0;
         List<String> basket = new ArrayList<>(Arrays.asList(shoppingBasket));
+        List<Integer> sortedBasket = new ArrayList<>();
+        sortedBasket = sortBasket(basket); // list met aantallen unieke boeken, gesorteerd in afnemend aantal
         if (basket.size() % 5 == 3) {
             totalPrice = calculatePriceWithCheaperMethod(totalPrice, basket);
         } else {
@@ -26,7 +28,31 @@ public class PotterCalculator{
         return totalPrice;
     }
 
+    private List<Integer> sortBasket(List<String> basket) {
+        List<Integer> sortedBasket = new ArrayList<>();
+        int bookOne = 0;
+        int bookTwo = 0;
+        int bookThree = 0;
+        int bookFour = 0;
+        int bookFive = 0;
+        for (String book : basket) {
+            if (book == "one") {bookOne ++;}
+            if (book == "two") {bookTwo ++;}
+            if (book == "three") {bookThree ++;}
+            if (book == "four") {bookFour ++;}
+            if (book == "five") {bookFive ++;}
+        }
+        sortedBasket.add(bookOne);
+        sortedBasket.add(bookTwo);
+        sortedBasket.add(bookThree);
+        sortedBasket.add(bookFour);
+        sortedBasket.add(bookFive);
+        Collections.sort(sortedBasket, Collections.reverseOrder());
+        return sortedBasket;
+    }
+
     public double calculatePriceWithCheaperMethod(double totalPrice, List<String> basket) {
+        // TODO omkatten naar berekeningen maken met sortedBasket.
             while (!basket.isEmpty()){
             while (basket.size() > 8){
                 totalPrice += 30;
@@ -56,6 +82,7 @@ public class PotterCalculator{
     }
 
     public double calculatePriceTheStraightforwardWay(double totalPrice, List<String> basket) {
+        // TODO omkatten naar berekeningen maken met sortedBasket.
         while (!basket.isEmpty()){
             Set<String> subsetOfBooks = new HashSet<>();
             for (String book : basket){
